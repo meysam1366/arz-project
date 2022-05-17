@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Hash;
 | and give it the Closure to call when that URI is requested.
 |
 */
-$router->get('/', function() {
-    return Hash::make('12345678');
-});
 $router->get('api/v1/login','ApiController@authenticate');
 
 $router->group(['prefix' => 'api/v1', 'middleware' => 'auth'], function() use($router) {
